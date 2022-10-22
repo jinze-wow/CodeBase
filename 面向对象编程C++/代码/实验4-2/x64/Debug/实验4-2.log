@@ -1,0 +1,8 @@
+﻿  源.cpp
+D:\大学\大二下\c++\代码\实验4-2\源.cpp(36,10): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\大学\大二下\c++\代码\实验4-2\源.cpp(109): message : 查看对正在编译的函数 模板 实例化“void qsort<double[99]>(T (&),int,int)”的引用
+          with
+          [
+              T=double [99]
+          ]
+  实验4-2.vcxproj -> D:\大学\大二下\c++\代码\实验4-2\x64\Debug\实验4-2.exe

@@ -1,0 +1,7 @@
+﻿  源.cpp
+D:\大学\大二下\c++\代码\实验4-3\源.cpp(102,13): warning C4244: “参数”: 从“double”转换到“Type”，可能丢失数据
+          with
+          [
+              Type=int
+          ]
+  实验4-3.vcxproj -> D:\大学\大二下\c++\代码\实验4-3\Debug\实验4-3.exe
