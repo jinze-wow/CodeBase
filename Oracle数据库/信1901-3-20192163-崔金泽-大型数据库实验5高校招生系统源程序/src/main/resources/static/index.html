@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/neat.min.css">
+    <link type="text/css" rel="stylesheet" href="css/jsgrid.min.css">
+    <link type="text/css" rel="stylesheet" href="css/jsgrid-theme.min.css">
+    <link rel="stylesheet" href="css/index.css"><!-- jQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script><!-- Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script><!-- jsGrid -->
+    <script type="text/javascript" src="js/jsgrid.min.js"></script><!-- malsup's jquery.form -->
+    <script type="text/javascript" src="js/jquery.form.min.js"></script><!-- customized js -->
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body><!-- 顶部导航开始 -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><!-- 定宽容器 -->
+    <div class="container"><!-- 小于 768px 时收起而显示的导航栏头部 -->
+        <div class="navbar-header"><!-- 导航栏左侧铭牌logo --> <a href="/" class="navbar-brand">高校招生录取系统</a>
+            <!-- 展开/收缩导航条的按钮 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topNavBar">
+                <!-- 针对屏幕阅读器 --> <span class="sr-only">切换导航栏</span><!-- 按钮上的花纹 --> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span></button>
+        </div><!-- 导航栏内容 -->
+        <div class="collapse navbar-collapse" id="topNavBar"><!-- 左侧导航栏目 -->
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">系统设置</a></li>
+                <li><a href="#">数据维护</a></li>
+                <li><a href="#">报告管理</a></li>
+                <li><a href="#">帮助</a></li>
+            </ul><!-- 右侧控制面板 -->
+            <ul class="nav navbar-nav nav-controls pull-right">
+                <li><a href="#">退出系统</a></li>
+                <li><a href="#">帮助</a></li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- 顶部导航结束 --><!-- main wrapper start -->
+<div class="wrapper container">
+    <div class="row">
+        <aside class="leftMenu col-xs-3 col-lg-2">
+            <!-- person info tab, including avatar, person title and login message -->
+            <div class="personInfo"><img src="img/avatar_128px_1202943_easyicon.net.png" alt="个人头像" class="avatar">
+                <p class="title"><span class="name">张三</span>&nbsp;工程师</p>
+                <p class="message">欢迎登录！</p></div><!--.personInfo -->
+            <!-- navigation bar for projects, including a link to exit system -->
+            <ul class="projectNav">
+                <li><a href="javascript:loadCollegeList()">高校列表</a></li><!-- class="active" -->
+                <li><a href="javascript:loadEnrollReport()">高校录取报表</a></li>
+                <li><a href="javascript:loadStudentList()">学生列表</a></li>
+                <li><a href="javascript:$('#enrollManipulator').modal('show')">自动录取</a></li>
+                <li><a href="#">退出系统</a></li>
+            </ul><!--.projectNav --></aside>
+        <main class="col-xs-9 col-lg-10"><!-- current page route navigation -->
+            <ol class="breadcrumb">
+                <li class="active">您当前的位置：</li>
+                <li><a href="#">首页</a></li>
+                <li class="active">标题</li>
+            </ol><!--breadcrumb --><!-- operation view title --><h4 class="operTitle">标题</h4><!-- operation view -->
+            <div class="operView"><!-- operating buttons container -->
+                <div class="btnWrapper row" style="display:none"><a class="btnImport btn btn-primary col-xs-5 col-sm-2"
+                                                                    href="#" role="button">数据导入</a> <a
+                        class="btnManage btn btn-primary col-xs-5 col-sm-2" href="#" role="button">项目管理</a> <a
+                        class="btnDelete btn btn-danger col-xs-5 col-sm-2" href="#" role="button">删除</a> <a
+                        class="btnInsert btn btn-info col-xs-5 col-sm-2" href="#" role="button">新增</a></div>
+                <!-- table wrapper -->
+                <div class="basicInfoTable table-responsive"><!-- basic information table -->
+                    <div id="jsGrid"></div>
+                </div><!--.basicInfoTable.table-responsive--><!-- page navigation -->
+                <nav class="navPage">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul><!--.pagination --></nav><!--.navPage --></div><!--.operView --></main>
+    </div>
+    <div class="row"><!-- 底部开始 -->
+        <footer><!-- 版权声明 -->
+            <div><p class="copyright">Copyright&copy;&nbsp;2016&nbsp;XXXXXXXXXXXXXXXXXX&nbsp;版权所有</p></div>
+        </footer><!-- 底部结束 --></div>
+</div><!-- main wrapper end -->
+<div class="modal" id="">
+    <div class="modal-header"><a class="close" data-dismiss="modal">×</a>
+        <h3>自动录取模块</h3></div>
+    <div class="modal-body"><h4>本页提供清空录取结果、一键投档的相关功能</h4></div>
+    <div class="modal-footer"><a href="#" class="btn">关闭</a></div>
+</div><!-- Modal -->
+<div class="modal fade" id="enrollManipulator" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">关闭</span></button>
+                <h3 class="modal-title" id="myModalLabel">自动录取模块</h3></div>
+            <div class="modal-body"><h4>清空录取结果、一键投档的相关功能</h4>
+                <form id="enrollManipulatorForm" role="form">
+                    <div class="radio"><label><input type="radio" name="request_type" value="1" checked="checked"> 自动投档</label>
+                    </div>
+                    <div class="radio"><label><input type="radio" name="request_type" value="2"> 一键还原</label></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="enrollManipulatorSubmit">提交</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
