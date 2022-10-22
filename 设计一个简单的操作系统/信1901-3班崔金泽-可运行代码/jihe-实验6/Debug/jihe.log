@@ -1,0 +1,8 @@
+﻿  源.cpp
+D:\大学\大三下\OS小学期\Code\jihe-实验6\源.cpp(147,18): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\大学\大三下\OS小学期\Code\jihe-实验6\源.cpp(154,16): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\大学\大三下\OS小学期\Code\jihe-实验6\源.cpp(360,6): warning C4101: “i”: 未引用的局部变量
+D:\大学\大三下\OS小学期\Code\jihe-实验6\源.cpp(443,16): warning C4101: “i”: 未引用的局部变量
+D:\大学\大三下\OS小学期\Code\jihe-实验6\源.cpp(592,28): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+  LINK : 没有找到 D:\大学\大三下\OS小学期\Code\jihe-实验6\Debug\jihe.exe 或上一个增量链接没有生成它；正在执行完全链接
+  jihe.vcxproj -> D:\大学\大三下\OS小学期\Code\jihe-实验6\Debug\jihe.exe

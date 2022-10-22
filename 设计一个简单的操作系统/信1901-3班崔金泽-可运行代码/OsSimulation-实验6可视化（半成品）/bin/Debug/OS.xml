@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OS</name>
+    </assembly>
+    <members>
+        <member name="T:OS.Model.Address">
+            <summary>
+            16-bit address
+            divided into two parts: 7-bit PageIndex and 9-bit Offset
+            </summary>
+        </member>
+        <member name="T:OS.Model.ClockModel">
+            <summary>
+            simulation of clock in cpu
+            </summary>
+        </member>
+        <member name="F:OS.Model.ClockModel._counter">
+            <summary>
+            recording seconds passed
+            </summary>
+        </member>
+        <member name="F:OS.Model.ClockModel._timeSpan">
+            <summary>
+            the interval of the clock (ms)
+            </summary>
+        </member>
+        <member name="T:OS.Model.Constants">
+            <summary>
+            a static class storing constants
+            </summary>
+        </member>
+        <member name="T:OS.Model.ExternalPageTable">
+            <summary>
+            data structure of a external page table
+            used in data exchange between swap area and RAM
+            </summary>
+        </member>
+        <member name="T:OS.Model.ExternalPageTable.ExternalPageEntry">
+            <summary>
+            data structure of external page entry
+            consists of two parts : page index(in RAM) and block number(in hard-disk)
+            </summary>
+        </member>
+        <member name="M:OS.Model.ExternalPageTable.GetBlockNum(OS.Model.Address)">
+            <summary>
+            find a block in hard-disk with the address in RAM
+            if found return block num
+            if not return null
+            </summary>
+            <param name="addr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OS.Model.ExternalPageTable.GetBlockNum(System.UInt16)">
+            <summary>
+            find a block in hard-disk with the page index in RAM
+            if found return block num
+            if not return null
+            </summary>
+            <param name="pageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OS.Model.JCB">
+            <summary>
+            data structure of job control block
+            job is determined as the predecessor of process, which has not been in scheduling
+            </summary>
+        </member>
+        <member name="F:OS.Model.JCB._basicAddr">
+            <summary>
+            basic address for the program to read or write memory
+            designed to simulate the locality of reference
+            </summary>
+        </member>
+        <member name="M:OS.Model.JCB.#ctor">
+            <summary>
+            default constructor
+            create random job
+            </summary>
+        </member>
+        <member name="M:OS.Model.JCB.#ctor(System.Int32,System.Int32,System.Collections.Generic.List{OS.Model.ProcessModel.CodeSegment.Instruction})">
+            <summary>
+            constructor which takes params from outer files
+            </summary>
+            <param name="priority"></param>
+            <param name="insNum"></param>
+            <param name="instructions"></param>
+        </member>
+        <member name="T:OS.Model.Kernel">
+            <summary>
+            os kernel manages everything
+            </summary>
+        </member>
+        <member name="F:OS.Model.Kernel._cpu">
+            <summary>
+            hardware simulation references
+            </summary>
+        </member>
+        <member name="F:OS.Model.Kernel._pcbTable">
+            <summary>
+            data structures for process scheduling
+            </summary>
+        </member>
+        <member name="F:OS.Model.Kernel._createJobs">
+            <summary>
+            multithread programming
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.ScheduleThread">
+            <summary>
+            main function to schedule threads
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.CreateProcess(OS.Model.ProcessModel.PCB)">
+            <summary>
+            create process with a pcb
+            </summary>
+            <param name="pcb"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.WakeProcess(OS.Model.ProcessModel.PCB)">
+            <summary>
+            wake process with a pcb reference
+            </summary>
+            <param name="pcb"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.BlockProcess">
+            <summary>
+            block process due to system call or so on
+            no params taken, block random seconds
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.BlockProcess(System.Int32)">
+            <summary>
+            block process due to system call or so on
+            block seconds according to param
+            </summary>
+            <param name="seconds"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.CancelProcess(OS.Model.ProcessModel.PCB@)">
+            <summary>
+            cancle process with the reference pcb
+            </summary>
+            <param name="pcb"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.RandomCreateProcess">
+            <summary>
+            continuously create random processes
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.AcceptCall">
+            <summary>
+            simualtion of the kernel handling the system call from user process
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.RunInstruction(OS.Model.ProcessModel.PCB)">
+            <summary>
+            run instructions
+            </summary>
+            <param name="pcb"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.DoSomething">
+            <summary>
+            empty function designed to simulate "do something"
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.RunInsThread">
+            <summary>
+            thread to run instructions
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.FindMaxPriPCB">
+            <summary>
+            find the max priority pcb
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OS.Model.Kernel.Job2Process(OS.Model.JCB)">
+            <summary>
+            convert jcb to pcb
+            </summary>
+            <param name="jcb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OS.Model.Kernel.InputJobsThread">
+            <summary>
+            thread to input reserved jobs 
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.Logical2Physical(OS.Model.ProcessModel.PCB,OS.Model.Address)">
+            <summary>
+            convert logical address to physical address
+            if found in mmu, return address
+            if not found, raise page fault and wait for the program to run again
+            </summary>
+            <param name="pcb"></param>
+            <param name="logicalAddr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OS.Model.Kernel.PageFault(OS.Model.ProcessModel.PCB,OS.Model.Address)">
+            <summary>
+            raise page fault
+            </summary>
+            <param name="pcb"></param>
+            <param name="logicalAddr"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.GetEmptyFrame">
+            <summary>
+            find an empty frame in RAM
+            if found, return frame index
+            if not, return null
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OS.Model.Kernel.Swap2Memory(System.Int32,System.Int32)">
+            <summary>
+            transfer data from swap area to RAM
+            </summary>
+            <param name="block"></param>
+            <param name="frame"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.Memory2Swap(System.Int32,System.Int32)">
+            <summary>
+            tranfer data from RAM to swap area
+            </summary>
+            <param name="frame"></param>
+            <param name="block"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.Code2Swap(OS.Model.ProcessModel.PCB)">
+            <summary>
+            transfer code segment to swap area
+            </summary>
+            <param name="pcb"></param>
+        </member>
+        <member name="M:OS.Model.Kernel.ResumeThreads">
+            <summary>
+            resume threads
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.PauseThreads">
+            <summary>
+            pause threads
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.LoadInKernel">
+            <summary>
+            load kernel into memory
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.LoadJobs">
+            <summary>
+            load jobs from outer files
+            job info in "job.txt"
+            instruction info for each job in "1.txt", "2.txt", ...
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.InitializeHardwares">
+            <summary>
+            initialize hardwares
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.InitializeLists">
+            <summary>
+            initialize data structures
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.InitializeThreads">
+            <summary>
+            initialize threads;
+            </summary>
+        </member>
+        <member name="M:OS.Model.Kernel.Record(System.String)">
+            <summary>
+            output kernel info to console and GUI
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="T:OS.Model.ListModel">
+            <summary>
+            model for list in kernel
+            </summary>
+        </member>
+        <member name="T:OS.Model.MMU">
+            <summary>
+            mmu in cpu
+            used for convertion between logical and physical address
+            </summary>
+        </member>
+        <member name="T:OS.Model.OuterMemoryModel">
+            <summary>
+            hard-disk simulation
+            </summary>
+        </member>
+        <member name="T:OS.Model.OuterMemoryModel.Sector">
+            <summary>
+            data structure of sector
+            </summary>
+        </member>
+        <member name="T:OS.Model.OuterMemoryModel.Track">
+            <summary>
+            data structure of track
+            </summary>
+        </member>
+        <member name="T:OS.Model.OuterMemoryModel.Cylinder">
+            <summary>
+            data structor of cylinder
+            </summary>
+        </member>
+        <member name="P:OS.Model.OuterMemoryModel.EmptySwapBlock">
+            <summary>
+            return first empty block in swap area
+            </summary>
+        </member>
+        <member name="M:OS.Model.OuterMemoryModel.WriteInSwapSector">
+            <summary>
+            write a sector in swap area
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OS.Model.Page">
+            <summary>
+            simulation of page in memory
+            </summary>
+        </member>
+        <member name="T:OS.Model.PageTable">
+            <summary>
+            data structure of page table
+            </summary>
+        </member>
+        <member name="M:OS.Model.PageTable._rightShiftTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            right-shift the special register
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OS.Model.PageTable.Entry2Replace">
+            <summary>
+            find an entry least recently used to replace
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OS.Model.ProcessModel">
+            <summary>
+            simulation of process in OS
+            </summary>
+        </member>
+        <member name="T:OS.Model.PhysicalMemoryModel">
+            <summary>
+            data structure of physical memory(real ram)
+            </summary>
+        </member>
+        <member name="M:OS.Model.PhysicalMemoryModel.FindOneFreeFrame">
+            <summary>
+            find one free frame
+            if found, return frame index
+            if not, return null
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OS.CpuModel">
+            <summary>
+            simulation of cpu
+            a cpu consists of mmu and clock
+            </summary>
+        </member>
+        <member name="T:OS.View.CpuView">
+            <summary>
+            CpuView.xaml 的交互逻辑
+            </summary>
+            <summary>
+            CpuView
+            </summary>
+        </member>
+        <member name="M:OS.View.CpuView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:OS.View.ListControl">
+            <summary>
+            ListControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ListControl
+            </summary>
+        </member>
+        <member name="M:OS.View.ListControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:OS.View.PcbControl">
+            <summary>
+            PcbControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            PcbControl
+            </summary>
+        </member>
+        <member name="M:OS.View.PcbControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:OS.View.ProcessControl">
+            <summary>
+            ProcessControl.xaml 的交互逻辑
+            </summary>
+            <summary>
+            ProcessControl
+            </summary>
+        </member>
+        <member name="M:OS.View.ProcessControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:OS.App">
+            <summary>
+            App.xaml 的交互逻辑
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:OS.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:OS.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:OS.MainWindow">
+            <summary>
+            MainWindow.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:OS.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:OS.Properties.Resources">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:OS.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:OS.Properties.Resources.Culture">
+            <summary>
+              覆盖当前线程的 CurrentUICulture 属性
+              使用此强类型的资源类的资源查找。
+            </summary>
+        </member>
+    </members>
+</doc>

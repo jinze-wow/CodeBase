@@ -1,0 +1,9 @@
+﻿  BufferPool.cpp
+D:\大学\OS小学期\信1901-3班崔金泽-可运行代码\producer_consumer\product_consume\BufferPool.cpp(22,6): warning C4101: “i”: 未引用的局部变量
+D:\大学\OS小学期\信1901-3班崔金泽-可运行代码\producer_consumer\product_consume\BufferPool.cpp(36,6): warning C4101: “i”: 未引用的局部变量
+  Consume.cpp
+  Main_prg.cpp
+  Product.cpp
+  正在生成代码...
+  BufferPool.obj : 遇到了 MSIL 模块；对 MSIL 禁用了增量链接；正在执行完全链接
+  product_consume.vcxproj -> D:\大学\OS小学期\信1901-3班崔金泽-可运行代码\producer_consumer\Debug\producter_consumer.exe

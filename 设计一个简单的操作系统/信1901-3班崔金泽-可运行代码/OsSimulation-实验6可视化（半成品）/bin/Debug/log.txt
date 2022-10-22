@@ -1,0 +1,546 @@
+Schedule start
+process keeps runnning
+Schdule End
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+Create pcb start
+Create pcb end
+Schedule start
+process keeps runnning
+Schdule End
+Process 0 created
+Schedule start
+no reserved jobs
+running pcb switched to 0 
+Schdule End
+ins 0 running
+Page fault
+no reserved jobs
+Schedule start
+Schdule End
+ins 0 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 1 running
+no reserved jobs
+Schedule start
+Schdule End
+Create pcb start
+Create pcb end
+ins 2 running
+Process 1 created
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 0 running
+Page fault
+no reserved jobs
+Schedule start
+Schdule End
+ins 0 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 1 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 2 running
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+ins 3 running
+no reserved jobs
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 3 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 4 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 5 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 6 running
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+ins 4 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 5 running
+no reserved jobs
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 7 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 8 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 9 running
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+ins 6 running
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+no reserved jobs
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+ins 11 running
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+no reserved jobs
+Schedule start
+process keeps runnning
+Schdule End
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+ins 7 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 8 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 9 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+Schedule start
+ins 12 running
+no reserved jobs
+running pcb switched to 0 
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+running pcb switched to 1 
+Schdule End
+ins 12 running
+no reserved jobs
+Schedule start
+Schdule End
+no reserved jobs
+ins 12 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 12 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 12 running
+Schedule start
+running pcb switched to 0 
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+Create pcb start
+Create pcb end
+ins 10 running
+Process 2 created
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+running pcb switched to 2 
+Schdule End
+ins 0 running
+Page fault
+no reserved jobs
+Schedule start
+Schdule End
+ins 0 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 1 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 2 running
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+running pcb switched to 2 
+Schdule End
+ins 3 running
+no reserved jobs
+Schedule start
+running pcb switched to 0 
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+Schdule End
+ins 10 running
+no reserved jobs
+Schedule start
+running pcb switched to 2 
+Schdule End
+no reserved jobs
+ins 4 running
+Schedule start
+Schdule End
+ins 5 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 6 running
+Schedule start
+running pcb switched to 0 
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+running pcb switched to 2 
+Schdule End
+no reserved jobs
+ins 7 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 8 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 8 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 8 running
+Schedule start
+running pcb switched to 0 
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 10 running
+Schedule start
+running pcb switched to 2 
+Schdule End
+no reserved jobs
+ins 8 running
+Schedule start
+Schdule End
+no reserved jobs
+ins 8 running
+Create pcb start
+Create pcb end
+Schedule start
+Schdule End
+ins 8 running
+Process 3 created
+Schedule start
+Schdule End
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+ins 8 running
+Process 4 created
+Create pcb start
+Create pcb end
+Schedule start
+running pcb switched to 4 
+Schdule End
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+ins 0 running
+Process 5 created
+Schedule start
+Schdule End
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+Create pcb start
+Create pcb end
+ins 1 running
+Process 6 created
+Schedule start
+Schdule End
+ins 2 running
+Process 7 created
+Schedule start
+running pcb switched to 7 
+Schdule End
+ins 0 running
+Process 8 created
+Schedule start
+running pcb switched to 6 
+Schdule End
+ins 0 running
+Process 9 created
+Schedule start
+Schdule End
+ins 1 running
+Process 10 created
+Schedule start
+Schdule End
+ins 2 running
+Process 11 created
+Schedule start
+Schdule End
+ins 3 running
+Process 12 created
+Schedule start
+running pcb switched to 7 
+Schdule End
+ins 1 running
+Process 13 created
+Schedule start
+Schdule End
+ins 2 running
+Process 14 created
+Schedule start
+Schdule End
+ins 3 running
+Process 15 created
+Schedule start
+running pcb switched to 6 
+Schdule End
+ins 4 running
+Process 16 created
+Schedule start
+Schdule End
