@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Oct  8 08:57:56 2022
+# Process ID: 24496
+# Current directory: D:/Vivado2019.2/zuchengyuanli/shiyan8/shiyan8.runs/synth_1
+# Command line: vivado.exe -log pipeline_cpu_display.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pipeline_cpu_display.tcl
+# Log file: D:/Vivado2019.2/zuchengyuanli/shiyan8/shiyan8.runs/synth_1/pipeline_cpu_display.vds
+# Journal file: D:/Vivado2019.2/zuchengyuanli/shiyan8/shiyan8.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source pipeline_cpu_display.tcl -notrace

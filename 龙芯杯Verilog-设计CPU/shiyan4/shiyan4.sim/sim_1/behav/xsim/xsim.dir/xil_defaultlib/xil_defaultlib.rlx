@@ -1,0 +1,8 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+D:/Vivado2019.2/zuchengyuanli/shiyan4/shiyan4.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/4_alu/adder.v,1621220249,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/4_alu/alu.v,,adder,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/4_alu/alu.v,1621220249,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/4_alu/tb.v,,alu,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/4_alu/tb.v,1621220250,verilog,,,,tb,,,,,,,,

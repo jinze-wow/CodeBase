@@ -1,0 +1,8 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado2019.2/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 9e4e4fd80fe943db8f75073d1ddab06b --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <BLK_MEM_GEN_V6_1> not found while processing module instance <inst> [D:/Vivado2019.2/zuchengyuanli/source_code/8_pipeline_cpu/inst_rom.v:51]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

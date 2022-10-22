@@ -1,0 +1,9 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado2019.2/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 0b6bde5dcb3543a1a52aa642e54eab19 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot data_ram_display_behav xil_defaultlib.data_ram_display xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <data_ram> not found while processing module instance <data_ram_module> [D:/Vivado2019.2/zuchengyuanli/source_code/5_memory/memory_sync/data_ram/data_ram_display.v:50]
+ERROR: [VRFC 10-2063] Module <lcd_module> not found while processing module instance <lcd_module> [D:/Vivado2019.2/zuchengyuanli/source_code/5_memory/memory_sync/data_ram/data_ram_display.v:74]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

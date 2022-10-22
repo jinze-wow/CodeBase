@@ -1,0 +1,17 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+D:/Vivado2019.2/zuchengyuanli/shiyan7_multiCPU/multiCPU.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/shiyan7_multiCPU/multiCPU.srcs/sources_1/ip/data_ram/sim/data_ram.v,1665104300,verilog,,D:/Vivado2019.2/zuchengyuanli/shiyan7_multiCPU/multiCPU.srcs/sources_1/ip/inst_rom/sim/inst_rom.v,,data_ram,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/shiyan7_multiCPU/multiCPU.srcs/sources_1/ip/inst_rom/sim/inst_rom.v,1665104500,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/adder.v,,inst_rom,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/adder.v,1621220255,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/alu.v,,adder,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/alu.v,1621220255,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/decode.v,,alu,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/decode.v,1621220256,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/exe.v,,decode,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/exe.v,1621220256,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/fetch.v,,exe,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/fetch.v,1621220256,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/mem.v,,fetch,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/mem.v,1621220258,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/multi_cycle_cpu.v,,mem,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/multi_cycle_cpu.v,1622777011,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/regfile.v,,multi_cycle_cpu,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/regfile.v,1621220260,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/wb.v,,regfile,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/tb.v,1621220260,verilog,,,,tb,,,,,,,,
+D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/wb.v,1621220261,verilog,,D:/Vivado2019.2/zuchengyuanli/source_code/7_multi_cycle_cpu/tb.v,,wb,,,,,,,,

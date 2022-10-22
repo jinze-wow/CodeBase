@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Jun  1 15:16:40 2021
+# Process ID: 18148
+# Current directory: D:/Vivado2019.2/zuchengyuanli/shiyan5/shiyan5.runs/synth_1
+# Command line: vivado.exe -log data_ram_display.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source data_ram_display.tcl
+# Log file: D:/Vivado2019.2/zuchengyuanli/shiyan5/shiyan5.runs/synth_1/data_ram_display.vds
+# Journal file: D:/Vivado2019.2/zuchengyuanli/shiyan5/shiyan5.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source data_ram_display.tcl -notrace
