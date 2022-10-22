@@ -1,0 +1,29 @@
+﻿<Page x:Class="Sulimn.Views.Exploration.ForestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Style="{StaticResource PageStyle}"
+      Loaded="ForestPage_OnLoaded"
+      Title="Forest">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBox x:Name="TxtForest" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Height="500" Width="620" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" IsReadOnly="True" Margin="0,0,0,10" />
+        <Button x:Name="BtnClearing" Grid.Column="0" Grid.Row="1" Width="200" Content="_林中空地" Click="BtnClearing_Click" Margin="0,0,10,10" />
+        <Button x:Name="BtnCottage" Grid.Column="1" Grid.Row="1" Width="200" Content="小别墅" Click="BtnCottage_Click" Margin="0,0,10,10" />
+        <Button x:Name="BtnCave" Grid.Column="2" Grid.Row="1" Width="200" Content="山洞" Click="BtnCave_Click" Margin="0,0,0,10" />
+        <Button x:Name="BtnInvestigate" Grid.Column="0" Grid.Row="2" Width="200" Content="_森林" Click="BtnInvestigate_Click" Margin="0,0.2,10.4,-0.6" VerticalAlignment="Top" />
+        <Button x:Name="BtnProgress" Grid.Column="1" Grid.Row="2" Width="200" Content="_前进" Click="BtnProgress_Click" IsEnabled="False" Margin="0,0,10,0" />
+        <Button x:Name="BtnBack" Grid.Column="2" Grid.Row="2" Width="200" Content="_后退" Click="BtnBack_Click" IsCancel="True" />
+    </Grid>
+</Page>

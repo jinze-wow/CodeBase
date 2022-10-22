@@ -1,0 +1,10 @@
+直接打开Sulimn.sln文件运行即可。无需安装其他软件。但是每创建一次角色，项目的大小便会扩大10-50Mb，这是由于创建的新项目都要在sqllite数据库中保存导致的。
+推荐配置:
+操作系统	Windows 7 64-bit     	               Windows 10 64-bit
+处理器	Intel i3 4代 或 AMD FX 6300     	Intel i7 7代
+内存	2 GB RAM	                                                8 GB RAM
+显卡	NVIDIA GeForce GTX 750TI	                NVIDIA GeForce GTX 1060 6G
+DirectX 版本	11	                                  11
+网络	无需宽带互联网连接	                                无需宽带互联网连接
+存储空间	需要 500 MB 可用空间	                需要 1 GB 可用空间
+
