@@ -1,0 +1,11 @@
+     这个项目我没有看过，但是很多问题
+1.MVC3层架构有问题（你只有dao层）
+正常的应该是dao层就接口不是实现类，现在你的dao就是正常的daoImpl，dao的实现类
+2.实体类（com.java1234.model包下的）可以是entity,domain,尽量用entity或model，少用domain
+3.
+			//pstmt.setString(1, bookTypeId);
+			//类似这种，是不是可以写一个函数，根据参数直接调用
+			//一直手打，有部分感觉很难受啊
+		对于XXXdao,你前面方法规范了，是可以抽取1个公用的dao,其他的继承它就行了，就不用写了。
+	DbUtil.java我明天写个给你吧
+	
