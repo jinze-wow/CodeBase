@@ -1,0 +1,80 @@
+Microsoft (R) Macro Assembler Version 6.11		    12/12/21 16:09:44
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				STACK SEGMENT STACK
+ 0000  0040 [			DW 64 DUP(?)
+        0000
+       ]
+ 0080				STACK ENDS
+
+ 0000				DATA SEGMENT
+ 0000 3A 4B 24 2A 59		BUFF DB 58,75,36,42,89
+ 0005 00			MIN DB ?
+ 0006				DATA ENDS
+
+ 0000				CODE SEGMENT 
+				ASSUME CS:CODE,DS:DATA
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATA 
+ 0003  8E D8			    MOV DS,AX
+ 0005  B1 04			    MOV CL,4
+ 0007  A0 0000 R		    MOV AL,BUFF
+ 000A  BB 0001			    MOV BX,1
+ 000D				LOOP1:
+ 000D  3A 87 0000 R		    CMP AL,BUFF[BX] ;BUFF[BX]比当前的最小值大?
+ 0011  7C 04			    JL NEXT
+ 0013  8A 87 0000 R		    MOV AL,BUFF[BX]
+ 0017				NEXT:
+ 0017  43			    INC BX
+ 0018  FE C9			    DEC CL
+ 001A  75 F1			    JNZ LOOP1
+ 001C  A2 0005 R		    MOV MIN,AL
+ 001F				DIS_DEC:
+ 001F  B4 00			    MOV AH,0
+ 0021  B3 0A			    MOV BL,10
+ 0023  F6 F3			    DIV BL
+ 0025  8A DC			    MOV BL,AH
+ 0027  04 30			    ADD AL,30H
+ 0029  8A D0			    MOV DL,AL
+ 002B  B4 02			    MOV AH,2
+ 002D  CD 21			    INT 21H
+ 002F  80 C3 30			    ADD BL,30H
+ 0032  8A D3			    MOV DL,BL
+ 0034  B4 02			    MOV AH,2
+ 0036  CD 21			    INT 21H
+				    
+ 0038  B8 4C00			    MOV AX,4C00H  ;返回DOS
+ 003B  CD 21			    INT 21H
+ 003D				CODE ENDS
+				END START
+
+
+Microsoft (R) Macro Assembler Version 6.11		    12/12/21 16:09:44
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODE . . . . . . . . . . . . . .	16 Bit	 003D	  Para	  Private 
+DATA . . . . . . . . . . . . . .	16 Bit	 0006	  Para	  Private 
+STACK  . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Stack	  
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+BUFF . . . . . . . . . . . . . .	Byte	 0000	  DATA	
+DIS_DEC  . . . . . . . . . . . .	L Near	 001F	  CODE	
+LOOP1  . . . . . . . . . . . . .	L Near	 000D	  CODE	
+MIN  . . . . . . . . . . . . . .	Byte	 0005	  DATA	
+NEXT . . . . . . . . . . . . . .	L Near	 0017	  CODE	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODE	
+
+	   0 Warnings
+	   0 Errors

@@ -1,0 +1,61 @@
+Microsoft (R) Macro Assembler Version 6.11		    12/12/21 15:58:16
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				MYSTACK SEGMENT STACK
+ 0000  0040 [			        DW  64  DUP(?)
+        0000
+       ]
+ 0080				MYSTACK ENDS
+ 0000				DATA    SEGMENT
+ 0000  0000			        DW  ?
+ 0002				DATA    ENDS
+				        ASSUME  CS:CODE,SS:MYSTACK,CS:DATA
+ 0000				CODE    SEGMENT
+ 0000  B8 ---- R		START:  MOV AX, DATA
+ 0003  8E D8			        MOV DS, AX      ;数据段就位
+ 0005  B3 59			        MOV BL, 89      ;成绩存放在BL中
+ 0007  80 FB 3C			        CMP BL, 60
+ 000A  72 09			        JB  FAIL       ;低于60分，跳转到FAIL
+ 000C  80 FB 55			        CMP BL, 85
+ 000F  73 08			        JAE GOOD       ;不低于85分，跳转到GOOD
+ 0011  B0 50			        MOV AL, 'P'
+ 0013  EB 06			        JMP PRINT
+ 0015  B0 46			FAIL:   MOV AL, 'F'
+ 0017  EB 02			        JMP PRINT
+ 0019  B0 47			GOOD:   MOV AL, 'G'
+ 001B  8A D0			PRINT:  MOV DL, AL
+ 001D  B4 02			        MOV AH, 02H
+ 001F  CD 21			        INT 21H
+ 0021  CC			        INT 3H
+ 0022  B8 4C00			        MOV AX, 4C00H
+ 0025  CD 21			        INT 21H
+ 0027				CODE    ENDS
+				        END START
+
+Microsoft (R) Macro Assembler Version 6.11		    12/12/21 15:58:16
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODE . . . . . . . . . . . . . .	16 Bit	 0027	  Para	  Private 
+DATA . . . . . . . . . . . . . .	16 Bit	 0002	  Para	  Private 
+MYSTACK  . . . . . . . . . . . .	16 Bit	 0080	  Para	  Stack	  
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+FAIL . . . . . . . . . . . . . .	L Near	 0015	  CODE	
+GOOD . . . . . . . . . . . . . .	L Near	 0019	  CODE	
+PRINT  . . . . . . . . . . . . .	L Near	 001B	  CODE	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODE	
+
+	   0 Warnings
+	   0 Errors

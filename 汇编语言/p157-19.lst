@@ -1,0 +1,65 @@
+Microsoft (R) Macro Assembler Version 6.11		    10/06/21 10:35:25
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				stack segment stack
+ 0000  0040 [			dw 64 dup ( ?)
+        0000
+       ]
+ 0080				stack ends
+ 0000				data segment
+ 0000 47 6F 20 74 6F 20			buff db 'Go to school'
+       73 63 68 6F 6F 6C
+ 000C = 000C				count equ $-buff
+ 000C				data ends
+ 0000				code segment
+				assume cs:code , ds :data
+ 0000				start:
+ 0000  B8 ---- R			mov ax , data
+ 0003  8E D8				mov ds , ax
+ 0005  B1 0C				mov cl, count;字符串长度
+ 0007  BB 0000				mov bx,0;基地址为0
+ 000A					loop1:
+ 000A  8A 87 0000 R			mov al , buff [bx]
+ 000E  3C 61				cmp al, 61h;<6lh 
+ 0010  7C 0A				jl next;不是小写字母
+ 0012  3C 7A				cmp al, 7ah; >7ah ?
+ 0014  7F 06				jg next;不是小写字母
+ 0016  2C 20				sub al,20h;是小写字母,改为大写
+ 0018  88 87 0000 R			mov buff[bx] ,al;存入原位置
+ 001C				next:
+ 001C  43			inc bx;基址加1
+ 001D  FE C9			dec cl;字符长度减一
+ 001F  75 E9				jnz loop1
+ 0021  B8 4C00				mov ax,4c00h
+ 0024  CD 21			int 21h
+ 0026				code ends
+					end start
+
+Microsoft (R) Macro Assembler Version 6.11		    10/06/21 10:35:25
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+code . . . . . . . . . . . . . .	16 Bit	 0026	  Para	  Private 
+data . . . . . . . . . . . . . .	16 Bit	 000C	  Para	  Private 
+stack  . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Stack	  
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+buff . . . . . . . . . . . . . .	Byte	 0000	  data	
+count  . . . . . . . . . . . . .	Number	 000Ch	 
+loop1  . . . . . . . . . . . . .	L Near	 000A	  code	
+next . . . . . . . . . . . . . .	L Near	 001C	  code	
+start  . . . . . . . . . . . . .	L Near	 0000	  code	
+
+	   0 Warnings
+	   0 Errors

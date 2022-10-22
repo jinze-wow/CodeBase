@@ -1,0 +1,260 @@
+Microsoft (R) Macro Assembler Version 6.11		    12/12/21 16:12:37
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+ 0000 14				BUF DB 20
+ 0001  00					DB ?
+ 0002  0014 [					DB 20 DUP(0)
+        00
+       ]
+ 0016  0006 [					DB 6 DUP(0)
+        00
+       ]
+ 001C 50 4C 45 41 53 45			STRING0 DB 'PLEASE INPUT STRINGS:',0AH,0DH,'$'
+       20 49 4E 50 55 54
+       20 53 54 52 49 4E
+       47 53 3A 0A 0D 24
+ 0034 50 4C 45 41 53 45		    STRING1 DB 'PLEASE CHOOSE INSERT OR DELETE:1.INSERT 2.DELETE',0AH,0DH,'$'
+       20 43 48 4F 4F 53
+       45 20 49 4E 53 45
+       52 54 20 4F 52 20
+       44 45 4C 45 54 45
+       3A 31 2E 49 4E 53
+       45 52 54 20 32 2E
+       44 45 4C 45 54 45
+       0A 0D 24
+ 0067 50 4C 45 41 53 45		    STRING2 DB 'PLEASE INPUT THE ADDRESS TO DELETE',0AH,0DH,'$' 
+       20 49 4E 50 55 54
+       20 54 48 45 20 41
+       44 44 52 45 53 53
+       20 54 4F 20 44 45
+       4C 45 54 45 0A 0D
+       24
+ 008C 50 4C 45 41 53 45		    STRING3 DB 'PLEASE INPUT THE ADDRESS TO INSERT',0AH,0DH,'$'
+       20 49 4E 50 55 54
+       20 54 48 45 20 41
+       44 44 52 45 53 53
+       20 54 4F 20 49 4E
+       53 45 52 54 0A 0D
+       24
+ 00B1 50 4C 45 41 53 45		    STRING4 DB 'PLEASE INPUT THE SYMBOL TO INSERT',0AH,0DH,'$'
+       20 49 4E 50 55 54
+       20 54 48 45 20 53
+       59 4D 42 4F 4C 20
+       54 4F 20 49 4E 53
+       45 52 54 0A 0D 24
+ 00D5  0014 [			    BUF1 DB 20 DUP(0),'$'
+        00
+       ] 24
+ 00EA 00 00			    INSER DB 0,0
+ 00EC 00			    DELE DB 0
+ 00ED 00			    NUMBER DB 0
+ 00EE				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0100 [			    DB 256 DUP(0)
+        00
+       ]
+ 0100				STACKS ENDS
+
+ 0000				CODES SEGMENT
+
+				    assume CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+ 0005  8E C0			    MOV ES,AX
+
+ 0007  8D 1E 001C R		    LEA BX,STRING0
+ 000B  E8 0088			    CALL OUTPUTSTR  ;输出字符串0
+
+ 000E  E8 006F			    CALL INPUTSTR    ;输入字符串
+ 0011  E8 0075			    CALL HUICHE
+ 0014  A0 0001 R		    MOV AL,[BUF+1]
+ 0017  A2 00ED R		    MOV NUMBER,AL
+
+ 001A  8D 1E 0034 R		    LEA BX,STRING1
+ 001E  E8 0075			    CALL OUTPUTSTR ;输出字符串1
+ 0021  B4 01			    MOV AH,01H       ;输入1或2
+ 0023  CD 21			    INT 21H
+ 0025  3C 31			    CMP AL,'1'
+ 0027  E8 005F			    CALL HUICHE
+ 002A  74 25			    JZ IN1
+
+ 002C  8D 1E 0067 R		    LEA BX,STRING2 ;为2，执行删除操作
+ 0030  E8 0063			    CALL OUTPUTSTR
+ 0033  B4 01			    MOV AH,01H
+ 0035  CD 21			    INT 21H
+ 0037  24 0F			    AND AL,0FH
+ 0039  A2 00EC R		    MOV [DELE],AL
+ 003C  E8 004A			    CALL HUICHE
+
+ 003F  E8 005B			    CALL DELETE
+ 0042  E8 0089			    CALL MOVE1
+ 0045  8D 1E 00D5 R		    LEA BX,BUF1
+ 0049  E8 004A			    CALL OUTPUTSTR
+ 004C  E8 003A			    CALL HUICHE
+ 004F  EB 2B			    JMP FINAL
+
+ 0051  8D 1E 008C R		IN1:LEA BX,STRING3  ;执行插入操作
+ 0055  E8 003E			    CALL OUTPUTSTR
+ 0058  B4 01			    MOV AH,01H
+ 005A  CD 21			    INT 21H
+ 005C  24 0F			    AND AL,0FH
+ 005E  8D 1E 00B1 R		    LEA BX,STRING4
+ 0062  E8 0031			    CALL OUTPUTSTR
+ 0065  B4 01			    MOV AH,01H
+ 0067  CD 21			    INT 21H
+ 0069  A2 00EB R		    MOV [INSER+1],AL
+ 006C  E8 001A			    CALL HUICHE
+ 006F  E8 0073			    CALL INSERT
+ 0072  E8 0059			    CALL MOVE1
+ 0075  8D 1E 00D5 R		    LEA BX,BUF1
+ 0079  E8 001A			    CALL OUTPUTSTR
+					
+ 007C				FINAL:
+ 007C  B4 4C			    MOV AH,4CH
+ 007E  CD 21			    INT 21H
+
+ 0080				INPUTSTR PROC NEAR   ;输入函数
+ 0080  8D 16 0000 R			LEA DX,BUF
+ 0084  B4 0A			    MOV AH,0AH
+ 0086  CD 21			    INT 21H
+ 0088  C3			    RET
+ 0089				INPUTSTR ENDP
+
+ 0089				HUICHE PROC NEAR ;回车换行函数
+ 0089  B2 0D				MOV DL,0DH
+ 008B  B4 02				MOV AH,02H
+ 008D  CD 21				INT 21H
+ 008F  B2 0A				MOV DL,0AH
+ 0091  B4 02				MOV AH,02H
+ 0093  CD 21				INT 21H
+ 0095  C3				RET
+ 0096				HUICHE ENDP	
+
+ 0096				OUTPUTSTR PROC NEAR
+ 0096  8B D3				MOV DX,BX      ;输出字符串函数
+ 0098  B4 09				MOV AH,09H
+ 009A  CD 21				INT 21H
+ 009C  C3				RET
+ 009D				OUTPUTSTR ENDP
+
+ 009D				DELETE PROC NEAR  ;删除函数
+ 009D  8D 1E 0000 R		LEA BX,BUF
+ 00A1  8B FB				MOV DI,BX
+ 00A3  83 C7 02				ADD DI,2
+ 00A6  A0 00EC R			MOV AL,DELE
+ 00A9  32 E4				XOR AH,AH
+ 00AB  03 F8				ADD DI,AX
+					
+ 00AD  32 ED				XOR CH,CH
+ 00AF  8A 0E 00ED R			MOV CL,NUMBER
+					
+ 00B3  03 D9				ADD BX,CX
+ 00B5  83 C3 01				ADD BX,1
+ 00B8				MOVE:
+ 00B8  3B DF				CMP BX,DI
+ 00BA  74 0A				JE LADE
+ 00BC  8A 75 01				MOV DH,[DI+1]
+ 00BF  88 35				MOV [DI],DH
+ 00C1  47				INC DI
+ 00C2  3B DF				CMP BX,DI
+ 00C4  75 F2				JNE MOVE
+ 00C6				LADE:
+ 00C6  C6 05 24				MOV BYTE PTR [DI],'$'
+ 00C9  FE 0E 00ED R			DEC NUMBER	
+ 00CD  C3				RET
+					
+ 00CE				DELETE ENDP
+
+ 00CE				MOVE1 PROC NEAR  ;移动复制函数
+ 00CE  8D 36 0000 R			LEA SI,BUF
+ 00D2  83 C6 02				ADD SI,2
+ 00D5  8D 3E 00D5 R			LEA DI,BUF1
+ 00D9  8A 0E 00ED R			MOV CL,NUMBER
+ 00DD  32 ED				XOR CH,CH
+ 00DF  F3/ A4				REP MOVSB
+ 00E1  C6 05 24				MOV BYTE PTR [DI],'$'
+ 00E4  C3			    RET	
+ 00E5				MOVE1 ENDP
+
+ 00E5				INSERT PROC NEAR  ;插入函数
+
+ 00E5  8D 1E 0000 R			LEA BX,BUF
+ 00E9  8B FB				MOV DI,BX
+ 00EB  A0 00EA R			MOV AL,[INSER]
+ 00EE  32 E4				XOR AH,AH
+ 00F0  03 F8				ADD DI,AX
+ 00F2  47				INC DI
+ 00F3  32 ED				XOR CH,CH
+ 00F5  8A 0E 00ED R			MOV CL,NUMBER
+ 00F9  03 D9				ADD BX,CX
+ 00FB  83 C3 01				ADD BX,1
+ 00FE				INS1:
+ 00FE  8A 37				MOV DH,[BX]
+ 0100  88 77 01				MOV [BX+1],DH
+ 0103  4B				DEC BX
+ 0104  3B DF				CMP BX,DI
+ 0106  77 F6				JA INS1
+ 0108  43				INC BX
+ 0109  A0 00EB R			MOV AL,[INSER+1]
+ 010C  88 07				MOV [BX],AL
+ 010E  FE 06 00ED R			INC NUMBER
+ 0112  C3				RET
+ 0113				INSERT ENDP
+ 0113				CODES ENDS
+				END START
+
+
+Microsoft (R) Macro Assembler Version 6.11		    12/12/21 16:12:37
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0113	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 00EE	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0100	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+DELETE . . . . . . . . . . . . .	P Near	 009D	  CODES	Length= 0031 Public
+  MOVE . . . . . . . . . . . . .	L Near	 00B8	  CODES	
+  LADE . . . . . . . . . . . . .	L Near	 00C6	  CODES	
+HUICHE . . . . . . . . . . . . .	P Near	 0089	  CODES	Length= 000D Public
+INPUTSTR . . . . . . . . . . . .	P Near	 0080	  CODES	Length= 0009 Public
+INSERT . . . . . . . . . . . . .	P Near	 00E5	  CODES	Length= 002E Public
+  INS1 . . . . . . . . . . . . .	L Near	 00FE	  CODES	
+MOVE1  . . . . . . . . . . . . .	P Near	 00CE	  CODES	Length= 0017 Public
+OUTPUTSTR  . . . . . . . . . . .	P Near	 0096	  CODES	Length= 0007 Public
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+BUF1 . . . . . . . . . . . . . .	Byte	 00D5	  DATAS	
+BUF  . . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+DELE . . . . . . . . . . . . . .	Byte	 00EC	  DATAS	
+FINAL  . . . . . . . . . . . . .	L Near	 007C	  CODES	
+IN1  . . . . . . . . . . . . . .	L Near	 0051	  CODES	
+INSER  . . . . . . . . . . . . .	Byte	 00EA	  DATAS	
+NUMBER . . . . . . . . . . . . .	Byte	 00ED	  DATAS	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+STRING0  . . . . . . . . . . . .	Byte	 001C	  DATAS	
+STRING1  . . . . . . . . . . . .	Byte	 0034	  DATAS	
+STRING2  . . . . . . . . . . . .	Byte	 0067	  DATAS	
+STRING3  . . . . . . . . . . . .	Byte	 008C	  DATAS	
+STRING4  . . . . . . . . . . . .	Byte	 00B1	  DATAS	
+
+	   0 Warnings
+	   0 Errors

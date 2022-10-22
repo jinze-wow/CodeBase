@@ -1,0 +1,92 @@
+Microsoft (R) Macro Assembler Version 6.11		    10/06/21 11:18:50
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				stack segment stack ; ¶ÑÕ»¶ÎµÄ¶¨Òå
+ 0000  0040 [			byte 64 dup(0)
+        00
+       ]
+ 0040				STACK ENDS
+ 0000				DATA  SEGMENT
+ 0000 65 76 78 54 90 85		   LIST DB 65H,76H,78H,54H,90H,85H,68H,66H,77H,88H
+       68 66 77 88
+ 000A  99 89 79 69 75 85	   		DB 99H,89H,79H,69H,75H,85H,63H,73H,83H,93H
+       63 73 83 93
+ 0014 0000			   SUM DW 0
+ 0016 00			   AVER DB 0
+ 0017  0064 [			   BUF DB 100 DUP(?)
+        00
+       ]
+ 007B				  DATA ENDS
+ 0000				CODE SEGMENT
+					ASSUME CS:CODE,DS:DATA,SS:STACK
+ 0000  1E			START: PUSH DS
+ 0001  B8 ---- R			MOV AX,DATA
+ 0004  8E D8				MOV DS,AX
+ 0006  BF 0000 R		    MOV DI,OFFSET LIST
+ 0009  BB 0013			    MOV BX,19
+ 000C  8B F7			LPO: MOV SI,DI
+ 000E  8B CB				MOV CX,BX
+ 0010  8A 04			LP1: MOV AL,[SI]
+ 0012  46				INC SI
+ 0013  3A 04				CMP AL,[SI]
+ 0015  73 07				JNC LP2
+ 0017  8A 14				MOV DL,[SI]
+ 0019  88 54 FF				MOV [SI-1],DL
+ 001C  88 04				MOV [SI],AL
+ 001E  E2 F0			LP2: LOOP LP1
+ 0020  4B				DEC BX
+ 0021  75 E9				JNZ LPO
+ 0023  B9 0014			LP3: MOV CX,20
+ 0026  BB 0000 R			MOV BX,OFFSET LIST
+ 0029  C7 06 0014 R 0000		MOV SUM,0
+ 002F  33 C0				XOR	AX,AX
+ 0031  02 07			LP4: ADD AL,[BX]
+ 0033  27				DAA
+ 0034  80 D4 00				ADC AH,0
+ 0037  43				INC BX
+ 0038  E2 F7				LOOP LP4
+ 003A  A3 0014 R			MOV SUM,AX
+ 003D  B3 20				MOV BL,20H
+ 003F  F6 F3				DIV BL
+ 0041  04 00				ADD AL,0 
+ 0043  27				DAA
+ 0044  A2 0016 R			MOV AVER,AL 
+ 0047  1F				POP DS
+ 0048  F4				HLT
+ 0049				CODE ENDS
+					END START
+
+
+Microsoft (R) Macro Assembler Version 6.11		    10/06/21 11:18:50
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODE . . . . . . . . . . . . . .	16 Bit	 0049	  Para	  Private 
+DATA . . . . . . . . . . . . . .	16 Bit	 007B	  Para	  Private 
+stack  . . . . . . . . . . . . .	16 Bit	 0040	  Para	  Stack	  
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+AVER . . . . . . . . . . . . . .	Byte	 0016	  DATA	
+BUF  . . . . . . . . . . . . . .	Byte	 0017	  DATA	
+LIST . . . . . . . . . . . . . .	Byte	 0000	  DATA	
+LP1  . . . . . . . . . . . . . .	L Near	 0010	  CODE	
+LP2  . . . . . . . . . . . . . .	L Near	 001E	  CODE	
+LP3  . . . . . . . . . . . . . .	L Near	 0023	  CODE	
+LP4  . . . . . . . . . . . . . .	L Near	 0031	  CODE	
+LPO  . . . . . . . . . . . . . .	L Near	 000C	  CODE	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODE	
+SUM  . . . . . . . . . . . . . .	Word	 0014	  DATA	
+
+	   0 Warnings
+	   0 Errors
