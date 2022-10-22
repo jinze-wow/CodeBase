@@ -1,0 +1,21 @@
+﻿  源.cpp
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(77,16): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(121,25): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(131,25): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(136,45): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(138,27): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(147,23): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(173,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(182,24): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(193,28): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(197,44): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(199,22): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(206,22): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(216,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(224,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(234,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(263,16): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(268,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(277,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\first，follow，select集合\源.cpp(161): warning C4715: “Letter_First”: 不是所有的控件路径都返回值
+  first，follow，select集合.vcxproj -> D:\大学\大三上\编译原理\代码\first，follow，select集合\Debug\first，follow，select集合.exe

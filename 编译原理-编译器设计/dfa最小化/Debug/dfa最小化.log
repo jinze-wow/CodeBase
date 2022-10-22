@@ -1,0 +1,13 @@
+﻿  源.cpp
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(70,23): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(76,23): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(57,5): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(59,9): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(63,9): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(153,31): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(157,35): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(172,35): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(207,27): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(221,27): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(240,23): warning C4018: “<”: 有符号/无符号不匹配
+D:\大学\大三上\编译原理\代码\dfa最小化\源.cpp(238,5): error C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
