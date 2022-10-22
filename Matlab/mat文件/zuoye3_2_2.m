@@ -1,0 +1,16 @@
+x=-100:0.01:100;
+y1=x.^2;
+y2=cos(2.*x);
+y3=y1.*y2;
+bar(x,y1)
+bar(x,y2)
+bar(x,y3)
+stairs(x,y1)
+stairs(x,y2)
+stairs(x,y3)
+stem(x,y1)
+stem(x,y2)
+stem(x,y3)
+area(x,y1)
+area(x,y2)
+area(x,y3)

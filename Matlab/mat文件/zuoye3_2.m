@@ -1,0 +1,12 @@
+X=-100:0.01:100;
+y1=x.^2;
+y2=cos(2.*x);
+y3=y1.*y2;
+plot(x,y1,'r-',x,y2,'c-.',x,y3,'b:')
+x=-100:0.01:100;
+y1=x.^2;
+y2=cos(2.*x);
+y3=y1.*y2;
+subplot(2,2,1),plot(x,y1,'r-');
+subplot(2,2,2),plot(x,y2,'c-.'); 
+subplot(2,2,3),plot(x,y2,'b:');
