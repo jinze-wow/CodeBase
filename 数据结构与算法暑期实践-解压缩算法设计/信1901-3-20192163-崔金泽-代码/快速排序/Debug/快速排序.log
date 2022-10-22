@@ -1,0 +1,3 @@
+﻿  源.cpp
+D:\大学\数据结构小学期\代码\快速排序\源.cpp(41): warning C4715: “quickSortPartition”: 不是所有的控件路径都返回值
+  快速排序.vcxproj -> D:\大学\数据结构小学期\代码\快速排序\Debug\快速排序.exe
