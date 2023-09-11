@@ -1,0 +1,557 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}专家信息{% endblock %}
+{% block css %}
+
+
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/font-awesome/css/font-awesome.min.css' %}">
+<!-- Ionicons -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/Ionicons/css/ionicons.min.css' %}">
+<!-- DataTables -->
+<link rel="stylesheet"
+      href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+<!-- Theme style -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/AdminLTE.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/skins/_all-skins.min.css' %}">
+<link rel="stylesheet"
+      href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+{% endblock %}
+
+{% block breadcrumb %}
+
+
+{% endblock %}
+{% block content %}
+
+
+<!-- Main content -->
+
+
+<!--<div id="one" style="width: 1000px; height: 650px; top:0; left:20;">-->
+
+<!--</div>-->
+<style>
+    .text-box {
+  background-color: #F9F9F9;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  padding: 10px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
+
+</style>
+<div style="">
+    <div class="text-box">
+        <table>
+          <thead>
+            <tr>
+              <th>姓名</th>
+              <th>编号0</th>
+              <th>熟悉专业</th>
+              <th>编号1</th>
+              <th>工作单位</th>
+              <th>编号2</th>
+              <th>出生地</th>
+              <th>编号3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>吕**</td>
+              <td>1</td>
+              <td>护理系</td>
+              <td>6</td>
+              <td>J大学</td>
+              <td>1</td>
+              <td>S市</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>李**</td>
+              <td>2</td>
+              <td>应用数学</td>
+              <td>10</td>
+              <td>J大学</td>
+              <td>1</td>
+              <td>D市</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>范*</td>
+              <td>3</td>
+              <td>体育教育</td>
+              <td>8</td>
+              <td>Q大学</td>
+              <td>5</td>
+              <td>HD市</td>
+              <td>2</td>
+            </tr>
+             <tr>
+              <td>丁**</td>
+              <td>4</td>
+              <td>水文地质</td>
+              <td>2</td>
+              <td>X大学</td>
+              <td>3</td>
+              <td>HS市</td>
+              <td>6</td>
+            </tr>
+             <tr>
+              <td>宋**</td>
+              <td>5</td>
+              <td>分析化学</td>
+              <td>7</td>
+              <td>T大学</td>
+              <td>2</td>
+              <td>B市</td>
+              <td>9</td>
+            </tr>
+             <tr>
+              <td>李**</td>
+              <td>6</td>
+              <td>临床医学</td>
+              <td>5</td>
+              <td>X大学</td>
+              <td>3</td>
+              <td>J市</td>
+              <td>4</td>
+            </tr>
+             <tr>
+              <td>任**</td>
+              <td>7</td>
+              <td>中医药学</td>
+              <td>1</td>
+              <td>H大学</td>
+              <td>10</td>
+              <td>HS市</td>
+              <td>6</td>
+            </tr>
+             <tr>
+              <td>苑**</td>
+              <td>8</td>
+              <td>畜牧</td>
+              <td>4</td>
+              <td>JN大学</td>
+              <td>9</td>
+              <td>HH市</td>
+              <td>5</td>
+            </tr>
+             <tr>
+              <td>王**</td>
+              <td>9</td>
+              <td>临床医学</td>
+              <td>5</td>
+              <td>X大学</td>
+              <td>3</td>
+              <td>H市</td>
+              <td>3</td>
+            </tr>
+             <tr>
+              <td>吴**</td>
+              <td>10</td>
+              <td>计算机科学与技术</td>
+              <td>6</td>
+              <td>S大学</td>
+              <td>4</td>
+              <td>B市</td>
+              <td>9</td>
+            </tr>
+             <tr>
+              <td>杨*</td>
+              <td>11</td>
+              <td>临床医学</td>
+              <td>5</td>
+              <td>J大学</td>
+              <td>1</td>
+              <td>ST市</td>
+              <td>10</td>
+            </tr>
+             <tr>
+              <td>张*</td>
+              <td>12</td>
+              <td>分析化学</td>
+              <td>7</td>
+              <td>H大学</td>
+              <td>10</td>
+              <td>S市</td>
+              <td>8</td>
+            </tr>
+             <tr>
+              <td>王**</td>
+              <td>13</td>
+              <td>材料学</td>
+              <td>3</td>
+              <td>J大学</td>
+              <td>1</td>
+              <td>A市</td>
+              <td>9</td>
+            </tr>
+             <tr>
+              <td>马**</td>
+              <td>14</td>
+              <td>分析化学</td>
+              <td>7</td>
+              <td>S大学</td>
+              <td>4</td>
+              <td>S市</td>
+              <td>8</td>
+            </tr>
+             <tr>
+              <td>玄**</td>
+              <td>15</td>
+              <td>农学</td>
+              <td>9</td>
+              <td>S大学</td>
+              <td>4</td>
+              <td>S市</td>
+              <td>10</td>
+            </tr>
+             <tr>
+              <td>李**</td>
+              <td>16</td>
+              <td>临床医学</td>
+              <td>5</td>
+              <td>SZ学院</td>
+              <td>7</td>
+              <td>D市</td>
+              <td>1</td>
+            </tr>
+             <tr>
+              <td>胡**</td>
+              <td>17</td>
+              <td>体育教育</td>
+              <td>8</td>
+              <td>Z大学</td>
+              <td>8</td>
+              <td>C市</td>
+              <td>7</td>
+            </tr>
+             <tr>
+              <td>王**</td>
+              <td>18</td>
+              <td>农学</td>
+              <td>9</td>
+              <td>ZG大学</td>
+              <td>6</td>
+              <td>H市</td>
+              <td>3</td>
+            </tr>
+             <tr>
+              <td>胡**</td>
+              <td>19</td>
+              <td>材料学</td>
+              <td>3</td>
+              <td>Z大学</td>
+              <td>8</td>
+              <td>S市</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>刘*</td>
+              <td>20</td>
+              <td>分析化学</td>
+              <td>7</td>
+              <td>X大学</td>
+              <td>3</td>
+              <td>B市</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+    <div class="text-box" style="margin-top:20px;">
+        <h2>异质图转化成同质图之后可视化</h2>
+    </div>
+
+    <img src="../static/networkx.png" style="width:100%; height: 100%;margin:20px;">
+     <div class="text-box" style="margin-top:20px;">
+        <h2>异质图直接可视化</h2>
+    </div>
+    <img src="../static/hetero.png" style="width: 100%; height:100%;margin:20px;">
+     <div class="text-box" style="margin-top:20px;">
+         <h2>原始数据中我提取出来了50组专家信息数据，专家信息之间有相互关系，在本次训练中专家以学科来分类，有计算机和医学两个类，其中每个学科有一个领导,本训练为预测每个节点会加入哪一边</h2>
+         <h2>训练之前的DGL原图</h2>
+    </div>
+    <img src="../static/networkx2.png" style="width: 100%; height:100%;margin:20px;">
+     <div class="text-box" style="margin-top:20px;">
+        <h2>训练过程</h2>
+    </div>
+    <img src="../static/practice.gif" style="width: 100%; height: 100%;margin:20px;">
+    <!--        </div>-->
+</div>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+<!--        body {-->
+<!--            font-size: 100%;-->
+<!--            margin: 3em;-->
+<!--            background: #666;-->
+<!--            color: #fff;-->
+<!--        }-->
+
+        h2,
+        p {
+            font-size: 100%;
+            font-weight: normal;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+
+        ul {
+            overflow: hidden;
+            padding: 3em;
+        }
+
+        ul li {
+            margin: 1em;
+            float: left;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #000;
+            background: #ffc;
+            display: block;
+            width: 10em;
+            height: 10em;
+            padding: 1em;
+            box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+            transition: transform 0.15s linear;
+        }
+
+        ul li  a h2 {
+            font-size: 140%;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+        ul li p {
+            font-size:180%;
+        }
+
+        ul li a {
+            transform:rotate(-6deg);
+        }
+        /* odd even */
+        ul li:nth-child(even) a {
+            transform: rotate(4deg);
+            position: relative;
+            top:5px;
+            background: #cfc;
+        }
+
+        ul li:nth-child(3n) a {
+            transform: rotate(-3deg);
+            position: relative;
+            top:-5px;
+            background: #ccf;
+        }
+
+        ul li a:hover ,ul li a:focus{
+            box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+            transform: scale(1.25);
+            position: relative;
+            z-index: 5;
+        }
+
+
+</style>
+<script type="text/javascript">
+var dom = document.getElementById("one");
+var myChart = echarts.init(dom);
+console.log('进入echar');
+var app = {};
+var datax=[10,2,3];
+var data0=[];
+var datay=[20,3,4];
+
+
+var option = {
+tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'cross',
+        label: {
+          backgroundColor: '#6a7985'
+        }
+      }
+    },
+ toolbox: {
+			    show: true,
+			    feature: {
+			      dataZoom: {
+			        yAxisIndex: 'none'
+			      },
+			      //dataView: { readOnly: false},//添加数据视图工具
+			      magicType: { type: ['line', 'bar'] },//切换柱状图和线形图工具
+			      restore: {},//添加还原工具
+			      saveAsImage: {}//添加下载功能
+			    }
+			  },
+    grid: {
+        top: '15%',
+        right: '10%',
+        left: '10%',
+        bottom: '12%'
+    },
+    xAxis: [{
+           name:'领域',
+         nameLocation:'end',
+         nameTextStyle: {
+             color: "#999",
+             fontSize:20,
+             padding:5,
+          },
+        type: 'category',
+        color: '#59588D',
+        data: {{date|safe}},
+        axisLabel: {
+            interval: 0,    //强制文字产生间隔
+		    rotate: 35,     //文字逆时针旋转45°
+            margin: 20,
+            color: '#999',
+            textStyle: {
+            fontSize: 18
+            },
+        },
+        axisLine: {
+            lineStyle: {
+                color: 'rgba(107,107,107,0.37)',
+            }
+        },
+        axisTick: {
+            show: false
+        },
+    }],
+    yAxis: [{
+           name:'数量',
+         nameLocation:'end',
+         nameTextStyle: {
+             color: "#999",
+             fontSize:20,
+             padding:5,
+          },
+        axisLabel: {
+            formatter: '{value}',
+            color: '#999',
+            textStyle: {
+                fontSize: 18
+            },
+        },
+        axisLine: {
+            lineStyle: {
+                color: 'rgba(107,107,107,0.37)',
+            }
+        },
+        axisTick: {
+            show: false
+        },
+        splitLine: {
+            lineStyle: {
+                color: 'rgba(131,101,101,0.2)',
+                type: 'dashed',
+            }
+        }
+    }],
+    series: [{
+        data:{{count|safe}},
+        type: 'bar',
+        smooth: true,
+        name: '数量',
+        showBackground: false,
+                barWidth: '20px', //柱体宽度
+                itemStyle: {
+                normal:{
+                   barBorderRadius: [20, 20, 0, 0], //柱体圆角
+                    color: new echarts.graphic.LinearGradient(
+                        //前四个参数用于配置渐变色的起止位置，这四个参数依次对应 右下左上 四个方位。也就是从右边开始顺时针方向。
+                        //通过修改前4个参数，可以实现不同的渐变方向
+                        /*第五个参数则是一个数组，用于配置颜色的渐变过程。
+                          每项为一个对象，包含offset和color两个参数
+                        */
+                        0, 1, 0, 0, [{//代表渐变色从正上方开始
+                                offset: 0, //offset范围是0~1，用于表示位置，0是指0%处的颜色
+                                color: '#14264f '
+                            }, //柱图渐变色
+                            {
+                                offset: 1, //指100%处的颜色
+                               color: '#61fbfc'
+                            }
+                        ]
+                    ),
+                    label:{
+                      show:true,
+                      position:'top',
+                      textStyle:{
+                        color:'#1cd0c3',
+                        fontSize:18,
+                        fontWeight:'bold',
+                      }
+                    }
+                  },
+                }
+            },
+
+]
+};
+
+
+myChart.setOption(option, true);
+
+
+
+
+
+
+</script>
+{#        bootstrap table自动渲染区域#}
+<!--<table id="mytab" class="table table-hover"></table>-->
+{% endblock %}
+
+{% block script %}
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'adminlet-2.4.10/dist/js/demo.js'%}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'adminlet-2.4.10/dist/js/adminlte.min.js'%}"></script>
+<!-- jQuery 3 -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery/dist/jquery.min.js'%}"></script>
+<!-- FastClick -->
+<script src="{% static 'adminlet-2.4.10/bower_components/fastclick/lib/fastclick.js'%}"></script>
+<!-- DataTables -->
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net/js/jquery.dataTables.min.js'%}"></script>
+<!-- SlimScroll -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'%}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'%}"></script>
+
+
+{% endblock %}>

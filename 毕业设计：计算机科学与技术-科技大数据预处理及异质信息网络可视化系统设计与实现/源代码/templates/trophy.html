@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}专家信息{% endblock %}
+{% block css %}
+
+
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/font-awesome/css/font-awesome.min.css' %}">
+<!-- Ionicons -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/Ionicons/css/ionicons.min.css' %}">
+<!-- DataTables -->
+<link rel="stylesheet"
+      href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+<!-- Theme style -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/AdminLTE.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/skins/_all-skins.min.css' %}">
+<link rel="stylesheet"
+      href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+{% endblock %}
+
+{% block breadcrumb %}
+
+
+{% endblock %}
+{% block content %}
+
+
+<!-- Main content -->
+
+
+<div id="one" style="width: 1000px; height: 650px; top:0; left:20;">
+
+</div>
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+<!--        body {-->
+<!--            font-size: 100%;-->
+<!--            margin: 3em;-->
+<!--            background: #666;-->
+<!--            color: #fff;-->
+<!--        }-->
+
+        h2,
+        p {
+            font-size: 100%;
+            font-weight: normal;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+
+        ul {
+            overflow: hidden;
+            padding: 3em;
+        }
+
+        ul li {
+            margin: 1em;
+            float: left;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #000;
+            background: #ffc;
+            display: block;
+            width: 10em;
+            height: 10em;
+            padding: 1em;
+            box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+            transition: transform 0.15s linear;
+        }
+
+        ul li  a h2 {
+            font-size: 140%;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+        ul li p {
+            font-size:180%;
+        }
+
+        ul li a {
+            transform:rotate(-6deg);
+        }
+        /* odd even */
+        ul li:nth-child(even) a {
+            transform: rotate(4deg);
+            position: relative;
+            top:5px;
+            background: #cfc;
+        }
+
+        ul li:nth-child(3n) a {
+            transform: rotate(-3deg);
+            position: relative;
+            top:-5px;
+            background: #ccf;
+        }
+
+        ul li a:hover ,ul li a:focus{
+            box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+            transform: scale(1.25);
+            position: relative;
+            z-index: 5;
+        }
+
+</style>
+<script type="text/javascript">
+var dom = document.getElementById("one");
+var myChart = echarts.init(dom);
+console.log('进入echar');
+var app = {};
+var datax=[10,2,3];
+var data0=[];
+var datay=[20,3,4];
+
+
+var option = {
+<!--title: {-->
+<!--    text: 'Referer of a Website',-->
+<!--    subtext: 'Fake Data',-->
+<!--    left: 'center'-->
+<!--  },-->
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    orient: 'vertical',
+    left: 'left'
+  },
+  title: {
+    left: 'center',
+    text: '获奖种类'
+  },
+  series: [
+    {
+<!--      name: 'Access From',-->
+      type: 'pie',
+      radius: '50%',
+      data: {{data|safe}},
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }
+  ]
+};
+
+
+myChart.setOption(option, true);
+
+
+
+
+
+</script>
+{#        bootstrap table自动渲染区域#}
+<!--<table id="mytab" class="table table-hover"></table>-->
+{% endblock %}
+
+{% block script %}
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'adminlet-2.4.10/dist/js/demo.js'%}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'adminlet-2.4.10/dist/js/adminlte.min.js'%}"></script>
+<!-- jQuery 3 -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery/dist/jquery.min.js'%}"></script>
+<!-- FastClick -->
+<script src="{% static 'adminlet-2.4.10/bower_components/fastclick/lib/fastclick.js'%}"></script>
+<!-- DataTables -->
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net/js/jquery.dataTables.min.js'%}"></script>
+<!-- SlimScroll -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'%}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'%}"></script>
+
+
+
+{% endblock %}>

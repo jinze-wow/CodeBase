@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8" >
+<title>Title</title>
+<style>
+#navlist {
+width: 20%;
+float: left;
+height: 80%;
+}
+#bodytext{
+width: 60%;
+float: left;
+height: 80%;
+#advert {
+width: 20%;
+float: right;
+height: 80%;}
+#page last {
+width: 60%;
+float: end;
+height: 80%;
+}
+</sty1e>
+</head>
+<body>

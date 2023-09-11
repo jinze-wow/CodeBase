@@ -1,0 +1,14 @@
+PyMySQL==1.0.2
+Django==4.1.2
+simplejson==3.17.6
+datetime
+collections
+pandas
+numpy
+re
+keras==2.9.0
+pyflakes
+wordcloud==1.8.1
+jieba==0.42.1
+PIL
+matplotlib

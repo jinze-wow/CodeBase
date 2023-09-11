@@ -1,0 +1,287 @@
+{% load static %}
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}专家信息{% endblock %}</title>
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/font-awesome/css/font-awesome.min.css' %}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/Ionicons/css/ionicons.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/AdminLTE.min.css' %}">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect. -->
+    <link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/skins/skin-blue.min.css' %}">
+
+    {% block css %}{% endblock %}
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <div>
+
+    </div>
+    <!-- Main Header -->
+    <header class="main-header" style="">
+
+        <!-- Logo -->
+        <a href="#" class="logo"
+           style="background-color: #21222D;height:60px;display: flex;align-items: center;flex-direction: row;justify-content: center;">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>专家信息</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>专家信息</b></span>
+        </a>
+
+
+    </header>
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" style="background-color: #2D2F39;">
+
+        <section class="sidebar">
+            <div class="btn-group-vertical" id="accordion">
+                <diV style="">
+                    <div class="btn btn-secondary" style="width: 230px;background-color:#3F414F;padding:30px;margin:0px;">
+                        <div role="tab" id="headingOne" style="background-color:#3F414F;">
+                            <h4 class="panel-title" style="">
+                                <li data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <font size="4" color="blue" style="color: aliceblue">
+                                        信息查找
+                                    </font>
+                                </li>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse " role="tabpanel"
+                             aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'expert_finding' %}">专家查找</a>
+                                </p>
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'project_finding' %}">项目查找</a>
+                                </p>
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'paper_finding' %}">论文查找</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn-secondary" style="width: 230px;background-color:#3F414F;padding:20px;margin:0px;">
+                        <div role="tab" id="headingTwo" style="background-color:#3F414F;">
+                            <h4 class="panel-title" style="">
+                                <li data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <font size="4" color="blue" style="color: aliceblue">
+                                        专家信息
+                                    </font>
+                                </li>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse " role="tabpanel"
+                             aria-labelledby="headingOne" >
+                            <div class="panel-body">
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'unit' %}">单位统计</a>
+                                </p>
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'field_research' %}">研究领域</a>
+                                </p>
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'familiarize' %}">熟悉专业</a>
+                                </p>
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'subject' %}">学科统计</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn-secondary" style="width: 230px;background-color:#3F414F;padding:20px;margin:0px;">
+                        <div role="tab" id="headingThree" style="background-color:#3F414F;">
+                            <h4 class="panel-title" style="">
+                                <li data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <font size="4" color="blue" style="color: aliceblue">
+                                        论文统计
+                                    </font>
+                                </li>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse " role="tabpanel"
+                             aria-labelledby="headingOne" >
+                            <div class="panel-body">
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'trophy' %}">获奖种类</a>
+                                </p>
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'language' %}">发表语言</a>
+                                </p>
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'amount' %}">论文数量</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn-secondary" style="width: 230px;background-color:#3F414F;padding:20px;margin:0px;">
+                        <div role="tab" id="headingfour" style="background-color:#3F414F;">
+                            <h4 class="panel-title" style="">
+                                <li data-toggle="collapse" data-parent="#accordion" href="#collapsefour"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <font size="4" color="blue" style="color: aliceblue">
+                                        项目库
+                                    </font>
+                                </li>
+                            </h4>
+                        </div>
+                        <div id="collapsefour" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingOne" >
+                            <div class="panel-body">
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'Unit_Name' %}">单位名称</a>
+                                </p>
+                                <p><a type="button" class="btn btn-secondary" href="{% url 'awards_Number' %}">获奖数量</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn-secondary" style="width: 200px;background-color:#3F414F;padding-left:10px;margin-left:15px;margin-top:15px;">
+                        <div>
+                            <h4 class="panel-title">
+                                <li>
+                                    <font size="4" color="blue" style="color: black;">
+                                        <a style="color: black;" href="{% url 'atlas' %}">知识图谱</a>
+                                    </font>
+                                </li>
+                            </h4>
+                        </div>
+                    </div>
+                </diV>
+            </div>
+            <div class="user-panel" style="background-color: #21222D;padding-top: 20px;">
+                <div class="pull-left image">
+                    <img src="{% static 'tx_en.jpg' %}" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>{{username}}</p>
+                    <!-- Status -->
+                    <a href="{% url 'login' %}"><i class="fa fa-circle text-success"></i>退出</a>
+                </div>
+            </div>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="background-color:white">
+
+        {% block breadcrumb %}{% endblock %}
+
+        <!-- Main content -->
+
+        {# 主体内容全放到这里！#}
+        {% block content %}
+
+        {% endblock %}
+
+        <!-- /.content -->
+
+    </div>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+<script src="{% static 'layui2/layui/layui.js'%}" charset="utf-8"></script>
+<!-- jQuery 3 -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- Morris.js charts -->
+<script src="{% static 'adminlet-2.4.10/bower_components/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/morris.js/morris.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'adminlet-2.4.10/dist/js/adminlte.min.js' %}"></script>
+<!-- DataTables-->
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net/js/jquery.dataTables.min.js'%}"></script>
+
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'%}"></script>
+<!-- Sparkline -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js'%}"></script>
+<!-- jvectormap -->
+<script src="{% static 'adminlet-2.4.10/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'%}"></script>
+<script src="{% static 'adminlet-2.4.10/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'%}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-knob/dist/jquery.knob.min.js'%}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'adminlet-2.4.10/bower_components/moment/min/moment.min.js'%}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap-daterangepicker/daterangepicker.js'%}"></script>
+<!-- datepicker -->
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'%}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'adminlet-2.4.10/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'%}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'%}"></script>
+<!-- FastClick -->
+<script src="{% static 'adminlet-2.4.10/bower_components/fastclick/lib/fastclick.js'%}"></script>
+<!-- SlimScroll -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'%}"></script>
+<!-- FastClick -->
+<script src="{% static 'adminlet-2.4.10/bower_components/fastclick/lib/fastclick.js'%}"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'adminlet-2.4.10/dist/js/demo.js'%}"></script>
+
+<script type="text/javascript">
+
+    Date.prototype.format = function (fmt) {
+            var o = {
+                "y+": this.getFullYear, //年
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds() //秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+
+//获取到     页面id为dateTime的div，这个名字自己取个就可以，我取了这个
+setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+
+
+</script>
+<script>
+  $('ul.sidebar-menu li').each(function(i){
+    if($(this).children().first().attr('href')==='{{ request.path }}'){
+      $(this).addClass('active');
+    }else{
+    }
+  });
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+
+
+
+</script>
+{% block script %}{% endblock %}
+</body>
+</html>

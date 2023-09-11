@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}专家信息{% endblock %}
+{% block css %}
+
+
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/font-awesome/css/font-awesome.min.css' %}">
+<!-- Ionicons -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/Ionicons/css/ionicons.min.css' %}">
+<!-- DataTables -->
+<link rel="stylesheet"
+      href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+<!-- Theme style -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/AdminLTE.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/skins/_all-skins.min.css' %}">
+<link rel="stylesheet"
+      href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+{% endblock %}
+
+{% block breadcrumb %}
+
+<div style="">
+
+            <img src="../static/wordcloud_zjxx.png" style="width: 1000px; height: 650px;margin:20px;">
+<!--        </div>-->
+    </div>
+{% endblock %}
+{% block content %}
+
+
+
+
+
+{# bootstrap table自动渲染区域#}
+<!--<table id="mytab" class="table table-hover"></table>-->
+{% endblock %}
+
+{% block script %}
+<!--勾选框-->
+<style>
+
+</style>
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'adminlet-2.4.10/dist/js/demo.js'%}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'adminlet-2.4.10/dist/js/adminlte.min.js'%}"></script>
+<!-- jQuery 3 -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery/dist/jquery.min.js'%}"></script>
+<!-- FastClick -->
+<script src="{% static 'adminlet-2.4.10/bower_components/fastclick/lib/fastclick.js'%}"></script>
+<!-- DataTables -->
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net/js/jquery.dataTables.min.js'%}"></script>
+<!-- SlimScroll -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'%}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'%}"></script>
+
+
+{% endblock %}>

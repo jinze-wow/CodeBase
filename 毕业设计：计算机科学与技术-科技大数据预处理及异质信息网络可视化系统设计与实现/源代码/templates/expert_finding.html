@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}专家数据分析{% endblock %}
+{% block css %}
+
+
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/font-awesome/css/font-awesome.min.css' %}">
+<!-- Ionicons -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/Ionicons/css/ionicons.min.css' %}">
+<!-- DataTables -->
+<link rel="stylesheet"
+      href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+<!-- Theme style -->
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/AdminLTE.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/skins/_all-skins.min.css' %}">
+
+<link rel="stylesheet"
+      href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+
+<!-- Google Font -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+{% endblock %}
+
+{% block breadcrumb %}
+
+{% endblock %}
+{% block content %}
+
+
+<!-- Main content -->
+
+
+
+<section class="content" style="padding-top:0px">
+
+<!--     <div style="width: 1000px;font-size:25px;">-->
+<!--              用户数据展示：-->
+<!--             </div>-->
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- Main content -->
+
+            <div class="box">
+                <div class="box-body">
+                    <table id="mytab" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <td style="width1:100px">姓名</td>
+                            <td style="width1:80px">城市</td>
+                            <td style="width1:40px">职位</td>
+                            <td style="">擅长专业</td>
+                            <td style="">研究领域</td>
+                            <td style="">学科</td>
+                            <td style="width1:100px">通信地址</td>
+                            <td style="width1:2000px">电话</td>
+
+                        </tr>
+                        </thead>
+                        {% for stu in all_information_list %}
+                        <tr>
+                            {% for s in stu %}
+                            <td>{{s}}</td>
+                            {% endfor %}
+
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box 2 act_list-->
+        </div>
+    </div>
+
+</section>
+
+</div>
+{#        bootstrap table自动渲染区域#}
+<!--<table id="mytab" class="table table-hover"></table>-->
+{% endblock %}
+
+{% block script %}
+<!--勾选框-->
+<style>
+    #mytab{
+        float: left;
+        table-layout: fixed;/*使table的宽度固定*/
+        width: 500px;/*给table一个宽度*/
+
+    }
+<!--    .host_style{-->
+<!--        width: 250px;/*给td定一个宽度,在这里有3个td，-->
+<!--        其他3个td都没有设置宽度，所以这3个td的宽度之和是-->
+<!--        table的定义的宽度-td(定义了宽度)*/-->
+<!--    }-->
+<!--     .host_style_short{-->
+<!--        width: 30px;/*给td定一个宽度,在这里有3个td，-->
+<!--        其他3个td都没有设置宽度，所以这3个td的宽度之和是-->
+<!--        table的定义的宽度-td(定义了宽度)*/-->
+<!--    }-->
+<!--     .host_style_short_n{-->
+<!--        width: 50px;/*给td定一个宽度,在这里有3个td，-->
+<!--        其他3个td都没有设置宽度，所以这3个td的宽度之和是-->
+<!--        table的定义的宽度-td(定义了宽度)*/-->
+<!--    }-->
+    button{width: 50px;
+        height: 30px;
+        float: left;
+        margin-bottom: 10px;
+        margin-right: 6px}
+
+
+</style>
+
+<script>
+    $("#btn2").click(function(){
+        var num=0;
+        $("input[name='action']").each(function(){
+            console.log($(this).is("checked"));
+            if($(this).is(":checked"))
+            {
+                num+=1;
+            }
+
+        })
+        if(num==$("input[name='action']").length)
+        {
+            $("input[name='action']").prop("checked",false);
+        }
+        else
+        {
+            $("input[name='action']").prop("checked",true);
+        }
+    });
+
+
+
+
+</script>
+<script>
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}'}
+    })
+
+
+</script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'adminlet-2.4.10/dist/js/demo.js'%}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'adminlet-2.4.10/dist/js/adminlte.min.js'%}"></script>
+<!-- jQuery 3 -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery/dist/jquery.min.js'%}"></script>
+<!-- FastClick -->
+<script src="{% static 'adminlet-2.4.10/bower_components/fastclick/lib/fastclick.js'%}"></script>
+<!-- DataTables -->
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net/js/jquery.dataTables.min.js'%}"></script>
+<!-- SlimScroll -->
+<script src="{% static 'adminlet-2.4.10/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'%}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js'%}"></script>
+<!--编辑表格信息-->
+<script type="text/javascript">
+    //修改
+    var arrMove=[];
+    var _this = null ;
+    $(document).on("click",".movebtn",function(){
+        arrMove=[]
+        _this=$(this).parents("tr")
+        $(".movefade").fadeIn(600)
+        var i=0;
+        var nid=0;
+        $(this).parent().siblings().each(function(){
+            i++;
+            if(i==2){
+                nid=$(this).text()
+                return true;
+            }
+            if(i>1) {
+                arrMove.push($(this).text())
+
+            }
+            console.log('arrMove为多少')
+            console.log(arrMove)
+            console.log(nid)
+        })
+        console.log(arrMove[0])
+
+        $(document).on("click",".edit_data",function(){
+            var student_id1 = $('#student_id1').val();
+            var name1 = $('#name1').val();
+            var n1 = $('#n1').val();
+            var n2 = $('#n2').val();
+            var n3 = $('#n3').val();
+            var n4 = $('#n4').val();
+            var n5 = $('#n5').val();
+            var score = $('#score').val();
+            $.ajax({
+                url: '/st_peo_ecit/',
+                type: 'post',
+                data: {'w':1,'nid': nid,'student_id':student_id1,'name':name1,'n1':n1,
+                    'n2':n2,'n3':n3,'n4':n4,'n5':n5,'score':score},
+                success: function (data) {
+                    data = JSON.parse(data);
+                    console.log(data)
+                    console.log(data.status)
+                    if (data.status) {
+                        alert("数据修改成功呢！！！！！")
+                        location.reload()
+                    } else {
+                        alert("数据修改失败哦")
+                    }
+                }
+            })
+        })
+        $(this).parents().find('.movemodal input').each(function(i){
+            $(this).val(arrMove[i])
+        })
+
+    })
+
+
+</script>
+<!--删除表格信息-->
+<script type="text/javascript">
+    //删除
+    //从数据表获取信息传输到模态框
+    var arrMove=[];
+    var _this = null ;
+    var nid='';
+        $(document).on("click",".deletebtn",function(){
+        arrMove=[]
+        _this=$(this).parents("tr")
+        var j=0;
+        $(this).parent().siblings().each(function(i,l){
+            j++;
+            if(j==3){
+                //push给数组添加新的元素
+                arrMove.push($(this).text())
+                return false;
+            }
+            if(j==2){
+                nid=$(this).text()
+            }
+
+            console.log("下标 #" + i + ": " + l)
+            console.log(arrMove)
+            console.log(nid)
+            console.log(11111111111)
+
+        })
+        console.log('已经进入模态框')
+        //向模态框加入新元素
+        $(this).parents().find('.deletemodal input').each(function(i){
+            $(this).val(arrMove[i])
+        })
+            //将真正实施删除数据的操作
+            $(document).on("click",".delete_yes",function(){
+                $.ajax({
+                    url: '/delete_data/',
+                    type: 'post',
+                    data: {'nid': nid,'w':1},
+                    success: function (data) {
+                        // alert(12345678)
+                        data = JSON.parse(data);
+                        // alert(data)
+                        console.log(data.status)
+                        if (data.status) {
+                            location.reload()
+                            alert("数据删除成功呀")
+
+                        }
+                        else {
+                            alert("数据删除失败哦")
+                        }}
+
+                })
+            })
+    })
+    $('#mytab').DataTable();
+
+
+
+</script>
+
+{#模态框form表单提交修改为ajax提交为了新增成功后根据后端返回增加提示#}
+<script type="text/javascript">
+
+    {#设置弹出提示框属性#}
+    toastr.options = {
+        closeButton: true,
+        debug: true,
+        progressBar: true,
+        positionClass: "toast-top-center",
+        onclick: null,
+        showDuration: "300",
+        hideDuration: "1000",
+        timeOut: "2000",
+        extendedTimeOut: "1000",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut"
+    };
+
+
+
+</script>
+
+
+{% endblock %}>
